@@ -103,13 +103,13 @@
 </head>
 <body>
 {% include 'partials/_nav.html%}
-<h1> {{contato.nome}} {{contato.sobrenome}} </h1>
 
-<strong> Telefone: </strong> {{contato.telefone}} <br>
-<strong> Email: </strong> {{contato.email}}<br>
-<strong> Data Nascimento </strong> {{contato.data_nascimento}}<br>
-<strong> Data Cadastro </strong> {{contato.data_cadastro}}<br>
-<strong> Categoria </strong> {{contato.categoria}}<br>
-<strong> Descriçao </strong> {{contato.decricao}}<br>
+<form action="." method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Cadastrar">
+</form>
+
+<h1> {{contato.nome}} {{contato.sobrenome}} </h1>
 </body>
 </html>
